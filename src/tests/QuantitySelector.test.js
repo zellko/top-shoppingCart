@@ -21,7 +21,7 @@ it('Render QuantitySelector', () => {
 
 describe('Shop Controller input and buttons', () => {
   it('Handle positive integer input', () => {
-    render(<QuantitySelector addtocart={() => {}} />);
+    render(<QuantitySelector onQuantityChange={() => {}} />);
     const qtyInput = screen.getByLabelText('QTY:');
 
     userEvent.type(qtyInput, '0');
@@ -31,7 +31,7 @@ describe('Shop Controller input and buttons', () => {
   });
 
   it('Handle non integer input / negative (should be ignored)', () => {
-    render(<QuantitySelector addtocart={() => {}} />);
+    render(<QuantitySelector onQuantityChange={() => {}} />);
     const qtyInput = screen.getByLabelText('QTY:');
 
     // If an negative number is enterer, convert it to pos
@@ -44,10 +44,7 @@ describe('Shop Controller input and buttons', () => {
   });
 
   it('+ button should increase QTY input value', () => {
-    render(
-      <QuantitySelector addtocart={() => {}} />,
-    );
-
+    render(<QuantitySelector onQuantityChange={() => {}} />);
     const qtyInput = screen.getByLabelText('QTY:');
     const buttonIncreaseQty = screen.getByRole('button', { name: '+' });
 
@@ -58,9 +55,7 @@ describe('Shop Controller input and buttons', () => {
   });
 
   it('- button should decrease QTY input value', () => {
-    render(
-      <QuantitySelector addtocart={() => {}} />,
-    );
+    render(<QuantitySelector onQuantityChange={() => {}} />);
 
     const qtyInput = screen.getByLabelText('QTY:');
     const buttonIncreaseQty = screen.getByRole('button', { name: '+' });
@@ -78,5 +73,40 @@ describe('Shop Controller input and buttons', () => {
     userEvent.type(buttonDecreaseQty, 'click');
     userEvent.type(buttonDecreaseQty, 'click');
     expect(qtyInput.value).toBe('1');
+  });
+
+  it('props onQuantityChange should call a function each time the value quantity is changed', () => {
+    const mockFunction = jest.fn();
+
+    render(<QuantitySelector onQuantityChange={mockFunction} />);
+
+    const qtyInput = screen.getByLabelText('QTY:');
+    const buttonIncreaseQty = screen.getByRole('button', { name: '+' });
+    const buttonDecreaseQty = screen.getByRole('button', { name: '-' });
+
+    userEvent.type(qtyInput, '555');
+    userEvent.type(buttonIncreaseQty, 'click');
+    userEvent.type(buttonDecreaseQty, 'click');
+    expect(mockFunction).toHaveBeenCalledTimes(5);
+    // Letter should not call function
+    userEvent.type(qtyInput, 'qw');
+    expect(mockFunction).toHaveBeenCalledTimes(5);
+  });
+
+  it('props onQuantityChange should return itemQty value', () => {
+    let qtyTest;
+    const mockFunction = (qty) => {
+      qtyTest = qty;
+    };
+
+    render(<QuantitySelector onQuantityChange={mockFunction} />);
+
+    const qtyInput = screen.getByLabelText('QTY:');
+    const buttonIncreaseQty = screen.getByRole('button', { name: '+' });
+
+    userEvent.type(buttonIncreaseQty, 'click');
+    expect(qtyTest).toBe(2);
+    userEvent.type(qtyInput, '34');
+    expect(qtyTest).toBe(234);
   });
 });

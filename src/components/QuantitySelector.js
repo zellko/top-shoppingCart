@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import Button from './Button';
 
 function QuantitySelector(props) {
   const [itemQTY, setItemQTY] = useState(1);
@@ -10,6 +9,7 @@ function QuantitySelector(props) {
     if (input !== '') {
       input = Math.abs(Number(input));
       setItemQTY(input);
+      props.onQuantityChange(input);
     } else {
       const previousValue = itemQTY;
       setItemQTY(previousValue);
@@ -18,11 +18,13 @@ function QuantitySelector(props) {
 
   const increaseQty = () => {
     setItemQTY(itemQTY + 1);
+    props.onQuantityChange(itemQTY + 1);
   };
 
   const decreaseQty = () => {
     if (itemQTY <= 1) return;
     setItemQTY(itemQTY - 1);
+    props.onQuantityChange(itemQTY - 1);
   };
 
   return (
@@ -33,7 +35,6 @@ function QuantitySelector(props) {
         <input onChange={inputHandler} type="number" name="qty" id="qty" min="1" max="99" value={itemQTY} />
         <button onClick={increaseQty}>+</button>
       </div>
-      <Button name="Add To Cart" onAddToCart={(e) => props.addtocart(e, itemQTY)} />
     </div>
   );
 }
