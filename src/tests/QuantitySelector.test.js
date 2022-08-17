@@ -9,12 +9,10 @@ it('Render QuantitySelector', () => {
     <QuantitySelector addtocart={() => {}} />,
   );
 
-  const buttonAddToCart = screen.getByRole('button', { name: 'Add to cart' });
   const buttonPlus = screen.getByRole('button', { name: '+' });
   const buttonMinus = screen.getByRole('button', { name: '-' });
   const qtyInput = screen.getByLabelText('QTY:');
 
-  expect(buttonAddToCart).toBeInTheDocument();
   expect(buttonPlus).toBeInTheDocument();
   expect(buttonMinus).toBeInTheDocument();
   expect(qtyInput).toBeInTheDocument();
