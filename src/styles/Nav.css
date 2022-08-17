@@ -1,0 +1,111 @@
+.nav{
+    background-color: #808080;
+}
+
+.nav ul{
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    gap: 32px;
+    list-style: none;
+    padding: 16px 32px;
+}
+
+.nav ul > :nth-child(2){
+    margin-left: auto;
+}
+
+.nav a{
+    color: #ffffff;
+    font-size: 1.3rem;
+    font-weight: 300;
+    text-decoration: none;
+    padding: 8px;
+}
+
+.nav a:hover{
+    color: #ff7ba7;
+}
+
+.logo{
+    position: relative;
+}
+
+.logo .triangle,
+.logo .square,
+.logo .circle{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    animation-duration: 60s;
+    animation-iteration-count: infinite;
+    width: 45px;
+    height: 45px;
+}
+
+.logo .triangle{
+    z-index:2;
+    width: 0;
+    height: 0;
+    border-left: 22px solid transparent;
+    border-right: 22px solid transparent;
+    border-bottom: 45px solid rgb(128, 238, 118);
+    transform: translate(-50%, -50%) rotate(-90deg);
+    animation-name: t-anim;
+}
+
+.logo .square{
+    z-index:0;
+    apect-ratio: 1;
+    background-color: rgb(112, 201, 212);
+    transform: translate(-50%, -50%) rotate(30deg);
+    animation-name: s-anim;
+}
+
+.logo .circle{
+    z-index:1;
+    position: absolute;
+    border-radius: 50%;
+    background-color: rgb(255, 161, 239);
+    transform: translate(-75%, -50%);    
+    animation-name: c-anim;
+}
+
+
+@keyframes t-anim{
+  0%   {
+    transform: translate(-50%, -50%) rotate(-90deg);
+  }
+  50%  {
+        transform: translate(-50%, -50%) rotate(-450deg);
+  }
+  100% {
+        transform: translate(-50%, -50%) rotate(-90deg);
+  }
+}
+
+@keyframes s-anim{
+  0%   {
+        transform: translate(-50%, -50%) rotate(30deg);
+  }
+  50%  {
+            transform: translate(-40%, -60%) rotate(90deg);
+  }
+  100% {
+        transform: translate(-50%, -50%) rotate(30deg);
+  }
+}
+
+@keyframes c-anim{
+  0%   {
+transform: translate(-75%, -50%); 
+  }
+  50%  {
+transform: translate(-25%, -40%); 
+  }
+  100% {
+transform: translate(-75%, -50%); 
+  }
+}

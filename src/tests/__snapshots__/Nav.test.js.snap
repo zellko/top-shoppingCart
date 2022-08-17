@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Nav component tests render Nav 1`] = `
+<div>
+  <div
+    class="nav"
+  >
+    <ul>
+      <a
+        href="/"
+      >
+        <div
+          class="logo"
+        >
+          <div
+            class="triangle"
+          />
+          <div
+            class="circle"
+          />
+          <div
+            class="square"
+          />
+        </div>
+      </a>
+      <a
+        href="/shop"
+      >
+        <li>
+          Shop
+        </li>
+      </a>
+      <a
+        href="/cart"
+      >
+        <li>
+          Cart
+        </li>
+      </a>
+    </ul>
+  </div>
+</div>
+`;
