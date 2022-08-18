@@ -114,7 +114,7 @@ describe('Shop component tests', () => {
 
     render(
       <Shop onAddToCart={mockFunction} />,
-      <Button name="Add To Cart" onAddToCart={() => {}} />,
+      <Button name="Add To Cart" onButtonClick={() => {}} />,
     );
 
     await waitFor(() => screen.getByRole('button', { name: 'Add To Cart' }));

@@ -7,7 +7,7 @@ import Button from '../components/Button';
 describe('Button component', () => {
   it('Render Button with correct name', () => {
     render(
-      <Button name="TestName" onAddToCart={() => {}} />,
+      <Button name="TestName" onButtonClick={() => {}} />,
     );
 
     const button = screen.getByRole('button', { name: 'TestName' });
@@ -18,7 +18,7 @@ describe('Button component', () => {
   it('Call function when clicked', () => {
     const mockFunction = jest.fn();
     render(
-      <Button name="TestName" onAddToCart={mockFunction} />,
+      <Button name="TestName" onButtonClick={mockFunction} />,
     );
     const button = screen.getByRole('button', { name: 'TestName' });
 

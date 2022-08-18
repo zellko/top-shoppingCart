@@ -100,7 +100,7 @@ function Shop(props) {
           <QuantitySelector
             onQuantityChange={(itemQty) => handleQuantityChange(itemQty, item)}
           />
-          <Button name="Add To Cart" onAddToCart={() => handleAddToCart(item)} />
+          <Button name="Add To Cart" onButtonClick={() => handleAddToCart(item)} />
         </div>
       )))
     );
