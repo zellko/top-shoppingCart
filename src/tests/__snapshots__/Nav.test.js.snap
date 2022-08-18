@@ -35,6 +35,7 @@ exports[`Nav component tests render Nav 1`] = `
       >
         <li>
           Cart
+          <span />
         </li>
       </a>
     </ul>

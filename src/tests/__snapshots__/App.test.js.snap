@@ -1,0 +1,204 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App component test render Cart page 1`] = `
+<div>
+  <div
+    class="App"
+  >
+    <div
+      class="nav"
+    >
+      <ul>
+        <a
+          href="/"
+        >
+          <div
+            class="logo"
+          >
+            <div
+              class="triangle"
+            />
+            <div
+              class="circle"
+            />
+            <div
+              class="square"
+            />
+          </div>
+        </a>
+        <a
+          href="/shop"
+        >
+          <li>
+            Shop
+          </li>
+        </a>
+        <a
+          href="/cart"
+        >
+          <li>
+            Cart
+            <span>
+              0
+            </span>
+          </li>
+        </a>
+      </ul>
+    </div>
+    <div
+      class="cart"
+    >
+      <div
+        class="cart-header"
+      >
+        <h1>
+          Your shopping cart is empty
+        </h1>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`App component test render Home page 1`] = `
+<div>
+  <div
+    class="App"
+  >
+    <div
+      class="nav"
+    >
+      <ul>
+        <a
+          href="/"
+        >
+          <div
+            class="logo"
+          >
+            <div
+              class="triangle"
+            />
+            <div
+              class="circle"
+            />
+            <div
+              class="square"
+            />
+          </div>
+        </a>
+        <a
+          href="/shop"
+        >
+          <li>
+            Shop
+          </li>
+        </a>
+        <a
+          href="/cart"
+        >
+          <li>
+            Cart
+            <span>
+              0
+            </span>
+          </li>
+        </a>
+      </ul>
+    </div>
+    <div
+      class="home"
+    >
+      <div
+        class="home-logo"
+      >
+        <div
+          class="triangle"
+        />
+        <div
+          class="circle"
+        />
+        <div
+          class="square"
+        />
+      </div>
+      <h1>
+        ShapeShop
+      </h1>
+      <a
+        href="/shop"
+      >
+        <button>
+          Go Shopping
+        </button>
+      </a>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`App component test render Shop page 1`] = `
+<div>
+  <div
+    class="App"
+  >
+    <div
+      class="nav"
+    >
+      <ul>
+        <a
+          href="/"
+        >
+          <div
+            class="logo"
+          >
+            <div
+              class="triangle"
+            />
+            <div
+              class="circle"
+            />
+            <div
+              class="square"
+            />
+          </div>
+        </a>
+        <a
+          href="/shop"
+        >
+          <li>
+            Shop
+          </li>
+        </a>
+        <a
+          href="/cart"
+        >
+          <li>
+            Cart
+            <span>
+              0
+            </span>
+          </li>
+        </a>
+      </ul>
+    </div>
+    <div
+      class="shop"
+    >
+      <div
+        class="shop-header"
+      >
+        <h3>
+          PRODUCT
+        </h3>
+        <h3>
+          PRICE
+        </h3>
+      </div>
+      <h3>
+        Loading...
+      </h3>
+      <div />
+    </div>
+  </div>
+</div>
+`;
