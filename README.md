@@ -1,6 +1,8 @@
 # top-shopping-cart
 The Odin Project - JavaScript - Project: Shopping Cart 
 
+Live version: 👉 https://zellko.github.io/top-shoppingcart/
+
 ## ToDo:
 
 Setup:
