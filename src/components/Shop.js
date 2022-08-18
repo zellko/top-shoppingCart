@@ -3,6 +3,14 @@ import QuantitySelector from './QuantitySelector';
 import Button from './Button';
 import '../styles/Shop.css';
 
+const shopIems = [{
+  id: '1', qty: '1', name: 'Pretty Triangle', type: 'triangle', price: 100,
+}, {
+  id: '2', qty: '1', name: 'Charming Square', type: 'square', price: 120,
+}, {
+  id: '3', qty: '1', name: 'Irresistible Circle', type: 'circle', price: 130,
+}];
+
 function Shop(props) {
   const [items, setItems] = useState([]);
   const [selectedQuantity, setSelectedQuantity] = useState([]);
@@ -11,28 +19,37 @@ function Shop(props) {
 
   const fetchItems = async () => {
     // Fetch shop items for API...
-    try {
-      const data = await fetch('https://api.npoint.io/c44450dbfe1c6ee962b7', {
-        mode: 'cors',
-      });
+    // try {
+    //   const data = await fetch('https://api.npoint.io/c44450dbfe1c6ee962b7', {
+    //     mode: 'cors',
+    //   });
 
-      if (data.status === 200) {
-        const dataJson = await data.json();
+    //   if (data.status === 200) {
+    //     const dataJson = await data.json();
 
-        // Update items hook with fetched data
-        setItems(dataJson);
+    //     // Update items hook with fetched data
+    //     setItems(dataJson);
 
-        // For each items fetched,
-        // ..create an array which contain the selected quantity of the item
-        const qtyArray = new Array(dataJson.length);
-        qtyArray.fill(1);
-        setSelectedQuantity(qtyArray);
-      } else {
-        setItems('error');
-      }
-    } catch (err) {
-      setItems('error');
-    }
+    //     // For each items fetched,
+    //     // ..create an array which contain the selected quantity of the item
+    //     const qtyArray = new Array(dataJson.length);
+    //     qtyArray.fill(1);
+    //     setSelectedQuantity(qtyArray);
+    //   } else {
+    //     setItems('error');
+    //   }
+    // } catch (err) {
+    //   setItems('error');
+    // }
+    // Update items hook with fetched data
+    setItems(shopIems);
+
+    // For each items fetched,
+    // ..create an array which contain the selected quantity of the item
+    const qtyArray = new Array(shopIems.length);
+    qtyArray.fill(1);
+    setSelectedQuantity(qtyArray);
+
     setIsLoading(false);
   };
 
