@@ -16,7 +16,7 @@ function App() {
   } = CartHook();
 
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/top-shoppingcart">
       <div className="App">
         <Nav cartLength={cart.length} />
         <Routes>
