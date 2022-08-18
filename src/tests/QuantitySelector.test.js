@@ -4,22 +4,31 @@ import '@testing-library/jest-dom';
 import userEvent from '@testing-library/user-event';
 import QuantitySelector from '../components/QuantitySelector';
 
-it('Render QuantitySelector', () => {
-  render(
-    <QuantitySelector addtocart={() => {}} />,
-  );
+describe('QuantitySelector: Render', () => {
+  it('Render QuantitySelector', () => {
+    render(
+      <QuantitySelector addtocart={() => {}} />,
+    );
 
-  const buttonPlus = screen.getByRole('button', { name: '+' });
-  const buttonMinus = screen.getByRole('button', { name: '-' });
-  const qtyInput = screen.getByLabelText('QTY:');
+    const buttonPlus = screen.getByRole('button', { name: '+' });
+    const buttonMinus = screen.getByRole('button', { name: '-' });
+    const qtyInput = screen.getByLabelText('QTY:');
 
-  expect(buttonPlus).toBeInTheDocument();
-  expect(buttonMinus).toBeInTheDocument();
-  expect(qtyInput).toBeInTheDocument();
-  expect(qtyInput.value).toBe('1');
+    expect(buttonPlus).toBeInTheDocument();
+    expect(buttonMinus).toBeInTheDocument();
+    expect(qtyInput).toBeInTheDocument();
+    expect(qtyInput.value).toBe('1');
+  });
+
+  it('Input value should be updated if props.quantity is provided', () => {
+    render(<QuantitySelector onQuantityChange={() => {}} quantity={50} />);
+    const qtyInput = screen.getByLabelText('QTY:');
+
+    expect(qtyInput.value).toBe('50');
+  });
 });
 
-describe('Shop Controller input and buttons', () => {
+describe('QuantitySelector: functions', () => {
   it('Handle positive integer input', () => {
     render(<QuantitySelector onQuantityChange={() => {}} />);
     const qtyInput = screen.getByLabelText('QTY:');

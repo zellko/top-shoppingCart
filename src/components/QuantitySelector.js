@@ -1,7 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 function QuantitySelector(props) {
   const [itemQTY, setItemQTY] = useState(1);
+
+  useEffect(() => {
+    if (props.quantity !== undefined) {
+      setItemQTY(props.quantity);
+    }
+  }, []);
 
   const inputHandler = (event) => {
     let input = event.target.value;
