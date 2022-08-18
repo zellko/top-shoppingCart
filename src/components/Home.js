@@ -1,9 +1,19 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import Button from './Button';
 
 function Home() {
   return (
-    <div>
-      Home
+    <div className="home">
+      <div className="home-logo">
+        <div className="triangle" />
+        <div className="circle" />
+        <div className="square" />
+      </div>
+      <h1>ShapeShop</h1>
+      <Link to="/shop">
+        <Button name="Go Shopping" />
+      </Link>
     </div>
   );
 }
