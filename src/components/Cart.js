@@ -1,6 +1,7 @@
 import React from 'react';
 import Button from './Button';
 import QuantitySelector from './QuantitySelector';
+import '../styles/Cart.css';
 
 function Cart(props) {
   const calculateCartTotal = (cart) => {

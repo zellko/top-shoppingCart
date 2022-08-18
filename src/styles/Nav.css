@@ -1,14 +1,15 @@
 .nav{
-    background-color: #808080;
+    background-color: var(--bg-color-nav);
+    width: 100%;
+    z-index: 1;
 }
 
 .nav ul{
-    margin: 0;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-around;
-    gap: 32px;
+    gap: 4%;
     list-style: none;
     padding: 16px 32px;
 }
@@ -18,15 +19,34 @@
 }
 
 .nav a{
-    color: #ffffff;
+    color: var(--txt-color-light);
     font-size: 1.3rem;
-    font-weight: 300;
+    font-weight: 700;
     text-decoration: none;
     padding: 8px;
 }
 
 .nav a:hover{
-    color: #ff7ba7;
+    color: var(--txt-color-hl);
+}
+
+.nav a::after{
+  content: "";
+  display: flex;
+  border-bottom: 1px solid var(--txt-color-hl);
+  width: 0%;
+  padding: 2px 0 0 0;
+  transition: width 0.2s ease-in-out;
+}
+.nav a:hover::after{
+  width: 100%;
+}
+
+.nav li span{
+  color: var(--txt-color-hl);
+  font-size: 1rem;
+  position: absolute;
+  padding: 0 4px;
 }
 
 .logo{
@@ -39,8 +59,9 @@
     position: absolute;
     left: 50%;
     top: 50%;
-    animation-duration: 60s;
+    animation-duration: 180s;
     animation-iteration-count: infinite;
+    animation-timing-function: linear;
     width: 45px;
     height: 45px;
 }
@@ -51,7 +72,7 @@
     height: 0;
     border-left: 22px solid transparent;
     border-right: 22px solid transparent;
-    border-bottom: 45px solid rgb(128, 238, 118);
+    border-bottom: 45px solid var(--triangle-color);
     transform: translate(-50%, -50%) rotate(-90deg);
     animation-name: t-anim;
 }
@@ -59,7 +80,7 @@
 .logo .square{
     z-index:0;
     apect-ratio: 1;
-    background-color: rgb(112, 201, 212);
+    background-color: var(--square-color);
     transform: translate(-50%, -50%) rotate(30deg);
     animation-name: s-anim;
 }
@@ -68,7 +89,7 @@
     z-index:1;
     position: absolute;
     border-radius: 50%;
-    background-color: rgb(255, 161, 239);
+    background-color: var(--circle-color);
     transform: translate(-75%, -50%);    
     animation-name: c-anim;
 }
@@ -79,33 +100,33 @@
     transform: translate(-50%, -50%) rotate(-90deg);
   }
   50%  {
-        transform: translate(-50%, -50%) rotate(-450deg);
+    transform: translate(-50%, -50%) rotate(-450deg);
   }
   100% {
-        transform: translate(-50%, -50%) rotate(-90deg);
+    transform: translate(-50%, -50%) rotate(-90deg);
   }
 }
 
 @keyframes s-anim{
   0%   {
-        transform: translate(-50%, -50%) rotate(30deg);
+    transform: translate(-50%, -50%) rotate(30deg);
   }
   50%  {
-            transform: translate(-40%, -60%) rotate(90deg);
+    transform: translate(-40%, -60%) rotate(90deg);
   }
   100% {
-        transform: translate(-50%, -50%) rotate(30deg);
+    transform: translate(-50%, -50%) rotate(30deg);
   }
 }
 
 @keyframes c-anim{
   0%   {
-transform: translate(-75%, -50%); 
+    transform: translate(-75%, -50%); 
   }
   50%  {
-transform: translate(-25%, -40%); 
+    transform: translate(-25%, -40%); 
   }
   100% {
-transform: translate(-75%, -50%); 
+    transform: translate(-75%, -50%); 
   }
 }

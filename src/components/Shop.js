@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import QuantitySelector from './QuantitySelector';
 import Button from './Button';
+import '../styles/Shop.css';
 
 function Shop(props) {
   const [items, setItems] = useState([]);
@@ -97,10 +98,12 @@ function Shop(props) {
             $
             {item.price}
           </p>
-          <QuantitySelector
-            onQuantityChange={(itemQty) => handleQuantityChange(itemQty, item)}
-          />
-          <Button name="Add To Cart" onButtonClick={() => handleAddToCart(item)} />
+          <div className="shop-controller">
+            <QuantitySelector
+              onQuantityChange={(itemQty) => handleQuantityChange(itemQty, item)}
+            />
+            <Button name="Add To Cart" onButtonClick={() => handleAddToCart(item)} />
+          </div>
         </div>
       )))
     );

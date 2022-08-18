@@ -1,0 +1,94 @@
+.shop{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(37, 43, 59, 0.4);
+    border-radius: 4px;
+    width: 80%;
+    margin-top: 32px;
+    padding: 32px 0;
+}
+
+
+.shop-header{
+    display: grid;
+    justify-items: center;
+    grid-template-columns: 2fr 1fr;
+    width: 80%;
+    padding: 0 0 8px 0 ;
+    border-bottom: 1px solid var(--txt-color-hl);
+}
+
+.shop > h3{
+    padding: 32px 0;
+}
+
+.shop-header :nth-child(2){
+    justify-self: flex-end;
+}
+
+.shop-item{
+    display: grid;
+    justify-items: center;
+    align-items: flex-start;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 80%;
+    border-bottom: 1px dotted var(--txt-color-hl);
+    padding: 16px 0;
+}
+
+.shop-item > div:first-child{
+    grid-row: 1 / 2;
+
+}
+
+.shop-item .shop-controller{
+    grid-column: 2 / 4;
+    justify-self: flex-end;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 4px;
+}
+
+.shop-item > :nth-child(2){
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+.shop-item > :nth-child(3){
+    justify-self: flex-end;
+}
+
+.shop-item .shop-controller > button{
+    height: 36px;
+    width: 108px;
+    font-size: 1rem;
+    background-color: var(--bg-btn-green);
+}
+
+.shop-item .shop-controller > button:hover{
+    background-color: var(--bg-btn-green-hl);
+}
+
+.triangle{
+     width: 0;
+    height: 0;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent; 
+    border-bottom: 60px solid rgb(128, 238, 118);
+}
+
+.square{
+    aspect-ratio: 1;
+    height: 60px;
+    background-color: rgb(112, 201, 212);
+}
+
+.circle{
+    aspect-ratio: 1;
+    height: 60px;
+    border-radius: 50%;
+    background-color: rgb(255, 161, 239);
+}

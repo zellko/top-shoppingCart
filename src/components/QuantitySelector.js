@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import '../styles/QuantitySelector.css';
 
 function QuantitySelector(props) {
   const [itemQTY, setItemQTY] = useState(1);
@@ -34,13 +35,11 @@ function QuantitySelector(props) {
   };
 
   return (
-    <div className="shop-controller">
-      <div className="quantity-selector">
-        <button onClick={decreaseQty}>-</button>
-        <label htmlFor="qty">QTY:</label>
-        <input onChange={inputHandler} type="number" name="qty" id="qty" min="1" max="99" value={itemQTY} />
-        <button onClick={increaseQty}>+</button>
-      </div>
+    <div className="quantity-selector">
+      <button onClick={decreaseQty}>-</button>
+      <label htmlFor="qty">QTY:</label>
+      <input onChange={inputHandler} type="number" name="qty" id="qty" min="1" max="99" value={itemQTY} />
+      <button onClick={increaseQty}>+</button>
     </div>
   );
 }

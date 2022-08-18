@@ -1,0 +1,116 @@
+.home{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    word-break: break-all;
+    text-align: center;
+}
+
+.home > *{
+    z-index: 1;
+}
+
+.home h1{
+    font-size: 5rem;
+    color: var(--txt-color-light);
+    padding: 32px 16px;
+}
+
+.home button{
+    background-color: var(--bg-btn-blue);
+    color: var(--txt-color-light);
+    font-size: 1.3rem;
+    font-weight: 700;
+    padding: 16px 32px;
+}
+
+.home button:hover{
+    background-color: var(--bg-btn-blue-hl);
+}
+
+.home-logo{
+    position: absolute;
+    height: 80%;
+    aspect-ratio: 1;
+    z-index: 0;
+    opacity: 0.1;
+}
+
+.home-logo .triangle,
+.home-logo .square,
+.home-logo .circle{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    animation-duration: 120s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    width: 450px;
+    height: 450px;
+}
+
+.home-logo .triangle{
+    z-index:2;
+    width: 0;
+    height: 0;
+    border-left: 225px solid transparent;
+    border-right: 225px solid transparent;
+    border-bottom: 450px solid var(--triangle-color);
+    transform: translate(-50%, -50%) rotate(-90deg);
+    animation-name: t-anim-home;
+}
+
+.home-logo .square{
+    z-index:0;
+    apect-ratio: 1;
+    background-color: var(--square-color);
+    transform: translate(-50%, -50%) rotate(30deg);
+    animation-name: s-anim-home;
+}
+
+.home-logo .circle{
+    z-index:1;
+    position: absolute;
+    border-radius: 50%;
+    background-color: var(--circle-color);
+    transform: translate(-75%, -50%);    
+    animation-name: c-anim-home;
+}
+
+@keyframes t-anim-home{
+  0%   {
+    transform: translate(-50%, -50%) rotate(-90deg);
+  }
+  50%  {
+    transform: translate(-25%, -25%) rotate(270deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(-90deg);
+  }
+}
+
+@keyframes s-anim-home{
+  0%   {
+    transform: translate(-50%, -50%) rotate(30deg);
+  }
+  50%  {
+    transform: translate(-50%, -90%) rotate(90deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(30deg);
+  }
+}
+
+@keyframes c-anim-home{
+  0%   {
+    transform: translate(-75%, -50%); 
+  }
+  50%  {
+    transform: translate(-100%, -25%); 
+  }
+  100% {
+    transform: translate(-75%, -50%); 
+  }
+}
