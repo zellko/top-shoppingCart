@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/Nav.css';
 
-function Nav() {
+function Nav(props) {
   return (
     <div className="nav">
       <ul>
@@ -18,7 +18,12 @@ function Nav() {
           <li>Shop</li>
         </Link>
         <Link to="/cart">
-          <li>Cart</li>
+          <li>
+            Cart
+            <span>
+              {props.cartLength}
+            </span>
+          </li>
         </Link>
       </ul>
     </div>
